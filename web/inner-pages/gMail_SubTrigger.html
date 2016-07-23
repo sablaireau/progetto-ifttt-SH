@@ -38,7 +38,7 @@
 
                     <div>
                         <a  type="submit" class="btn btn-primary" href="#logged_in" >Back</a>
-                        <a  type="submit" class="btn btn-primary"  href="#SubGMailAction"  ng-click="triggerGmail(gmailinput)" >Next</a>
+                        <a  type="submit" class="btn btn-primary"    onclick="myFunction()" >Next</a>
                     </div>
                     <!--
                     <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
@@ -55,7 +55,28 @@
 
 
 
+<!--href="#SubGMailAction" -->
 
 
-</body>
+    <script>
+        function myFunction() {
+            var x, text;
+
+            // Get the value of the input field with id="numb"
+            x = document.getElementById("email").value;
+
+            // If x is Not a Number or less than one or greater than 10
+            if (x == null || x == "" ) {
+                alert("Input not valid");
+            } else {
+                alert("Input OK");
+            }
+            //   document.getElementById("demo").innerHTML = text;
+        }
+
+    </script>
+    </body>
+
 </html>
+
+

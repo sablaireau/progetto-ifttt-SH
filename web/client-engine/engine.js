@@ -425,18 +425,7 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
         $scope.triggerGmail = function(user)
         {
-            var x, text;
 
-            // Get the value of the input field with id="numb"
-            x = document.getElementById("numb").value;
-
-            // If x is Not a Number or less than one or greater than 10
-            if (isNaN(x) || x < 1 || x > 10) {
-                alert("Input not valid");
-            } else {
-                alert("Input OK");
-            }
-            document.getElementById("demo").innerHTML = text;
 
 
             if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
@@ -559,7 +548,9 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
 
 
+
     }]);
+
 
 
 
@@ -572,6 +563,5 @@ iftttApp.controller('loggedinController', ['$scope', '$rootScope', '$routeParams
 
 
     }]);
-
 
 
