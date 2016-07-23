@@ -40,3 +40,5 @@ out/**
 .idea/artifacts/progetto_ifttt_SH_war_exploded.xml
 
 progetto-ifttt-SH.iml
+
+*.java
