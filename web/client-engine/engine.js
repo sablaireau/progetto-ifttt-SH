@@ -363,13 +363,13 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
 
                     var loginDataSend= {
                     "username": $scope.loginData.name,
-                    "password": $scope.loginData.pwd
+                    "pssword": $scope.loginData.pwd
                     //"pass2":$scope.registration.pass2,
                     //"email":$scope.registration.email,
                     //"timezone":timeZoneNumber
                 };
 
-            alert(loginDataSend.name);
+           //alert(loginDataSend.pssword);
                 $.ajax({
                     method: "post",
                     url: "/TempServlet",

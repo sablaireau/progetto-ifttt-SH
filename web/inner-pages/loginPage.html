@@ -25,23 +25,23 @@
 
         <div class="col-md-6">
             <div id="registration-jumbotron" class="jumbotron">
-                <form id="registration-form" role="form" name="form" ng-controller="registrationController" novalidate>
+                <form id="registration-form" role="form" name="form" ng-controller="loginController" novalidate>
 
                     <div class="container">
-
                         <!--Username -->
+
                         <div class="form-group">
                             <label style="color:rgba(255, 255, 255, 0.78)">
                                 Username:
                             </label>
-                                <input type="username" class="form-control" id="username" name="user"
+                            <input type="username" class="form-control" id="username" name="user"
                                    placeholder="username"  ng-model="user.name" required>
-                                <div ng-show="form.user.$invalid && !form.user.$pristine || form.$submitted || form.user.$touched">
+                            <div ng-show="form.user.$invalid && !form.user.$pristine || form.$submitted || form.user.$touched">
                                     <span ng-show="form.user.$error.required" style="color: #b81900">
                                         The user is mandatory
                                     </span>
-                                </div>
-                        </div>
+                             </div>
+
                                     <br>
                                     <!--Password-->
                                 <div class="form-group">
@@ -51,10 +51,10 @@
                                        ng-minlength="2"
                                        ng-maxlength="20"
                                     >
-                                    <div ng-show="form.pwd1.$invalid && !form.pwd1.$pristine || form.$submitted || form.pwd1.$touched">
-                                        <span ng-show="form.pwd1.$error.required" style="color: #b81900">The password is mandatory</span>
-                                        <span ng-show="form.pwd1.$error.minlength" style="color: #b81900">Password is too short.</span>
-                                        <span ng-show="form.pwd1.$error.maxlength">Password is too long.</span>
+                                    <div ng-show="form.pwd.$invalid && !form.pwd.$pristine || form.$submitted || form.pwd.$touched">
+                                        <span ng-show="form.pwd.$error.required" style="color: #b81900">The password is mandatory</span>
+                                        <span ng-show="form.pwd.$error.minlength" style="color: #b81900">Password is too short.</span>
+                                        <span ng-show="form.pwd.$error.maxlength">Password is too long.</span>
                                     </div>
                                 </div>
 
@@ -74,16 +74,13 @@
                                     </div>
                                     <div class="col-md-4">
                                     </div>
-                                    <div class="col-md-4">
-                                        <div align="center">
-                                            <a href="#recoveruserpassword" style="color:rgba(255, 255, 255, 0.78)">Password dimenticata?</a>
+                                        <div class="col-md-4">
+                                            <div align="center">
+                                                <a href="#recoveruserpassword" style="color:rgba(255, 255, 255, 0.78)">Password dimenticata?</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                </div>      </div>
                             </div>
-
-
-                        </div>
                     </div>
 
                 </form>
