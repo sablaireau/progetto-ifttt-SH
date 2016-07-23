@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<br>
-<br>
-<br>
-<br>
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <p><h1>Choose your action</h1></p>
-                <form id="gmail-form" role="form" name="form" ng-controller="recoveruserpasswordController" novalidate>
-                    <div class="form-group">
-                        <label style="color:rgba(0, 0, 0, 0.78)">Insert email</label>
-                        <input type="email" class="form-control" id="email" placeholder="insert your email"
-                               ng-model="gmailinput.email" required="" name="uEmail" >
-                        <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <p><h1>Choose your action</h1></p>
+                    <form id="gmail-form" role="form" name="form" ng-controller="SubGmailController" novalidate>
+                        <div class="form-group">
+                            <label style="color:rgba(0, 0, 0, 0.78)">Insert email</label>
+                            <input type="email" class="form-control" id="email" placeholder="insert your email"
+                                   ng-model="gmailinput.email" required="" name="email" >
+                            <br>
+                        </div>
 
                         <!--Subject e.mail -->
                         <div class="form-group">
@@ -31,20 +32,22 @@
                                       ng-model="gmailinput.subjectReceive"  name="subjectReceive"
                             ></textarea>
                         </div>
+                        <div>
+                            <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
+                            <a  type="submit" class="btn btn-primary"  href="#emailSuccess" >Finish!</a>
+                        </div>
 
-                        <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
-                        <a  type="submit" class="btn btn-primary"  href="#emailSuccess" >Finish!</a>
-
-                    </div>
-            </div>
-            <div class="col-md-4">
+                    </form>
+                </div>
+                <div class="col-md-4">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
 
-</body>
+
+    </body>
 </html>
