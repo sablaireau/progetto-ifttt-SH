@@ -423,10 +423,14 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
     function ($scope, $rootscope, $routeParams, $http, $resource) {
 
 
+
         $scope.triggerGmail = function(user)
         {
 
-
+            if(( typeof user === 'undefined' ))
+            {
+                alert("si");
+            }
 
             if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
             {
@@ -451,6 +455,7 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
 
             }
+            /*
             else
             {
                 if (angular.isDefined( user.subjectReceive))
@@ -507,7 +512,7 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                         }
                     }
 
-            }
+            }*/alert("You have not completed the form");
             //Test
 
             /*
@@ -538,12 +543,12 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
                 }
 
-               */
-         //   }
+
+           }
+*/
 
 
-
-        }
+       }
 
 
 

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<body>
+<script src="client-engine/gMail_SubTrigger.js"></script>
 <div>
 <br>
 <br>
@@ -38,9 +40,10 @@
 
                     <div>
                         <a  type="submit" class="btn btn-primary" href="#logged_in" >Back</a>
-                        <a  type="submit" class="btn btn-primary"    onclick="myFunction()" >Next</a>
+                        <a  type="submit" class="btn btn-primary"    ng-click="triggerGmail(user)" >Next</a>
                     </div>
                     <!--
+                    http://localhost:8080/index.jsp#/SubGMail
                     <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
                     <a  type="submit" class="btn btn-primary"  href="#SubGMailAction" ng-click="triggerGmail(gmailinput)">Next</a>
                     -->
@@ -59,20 +62,7 @@
 
 
     <script>
-        function myFunction() {
-            var x, text;
 
-            // Get the value of the input field with id="numb"
-            x = document.getElementById("email").value;
-
-            // If x is Not a Number or less than one or greater than 10
-            if (x == null || x == "" ) {
-                alert("Input not valid");
-            } else {
-                alert("Input OK");
-            }
-            //   document.getElementById("demo").innerHTML = text;
-        }
 
     </script>
     </body>
