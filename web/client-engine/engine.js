@@ -344,3 +344,57 @@ iftttApp.controller('gmailController', ['$scope', '$rootScope', '$routeParams', 
         }
 
     }]);
+
+
+
+iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
+    function ($scope, $rootscope, $routeParams, $http, $resource) {
+        $('#registration-form').addClass('animated fadeIn');
+
+
+        $scope.registration = {};
+
+
+
+        $scope.loginCheck = function(user)
+        {
+            $scope.loginData = angular.copy(user);
+
+
+                    var loginDataSend= {
+                    "username": $scope.loginData.name,
+                    "password": $scope.loginData.pwd
+                    //"pass2":$scope.registration.pass2,
+                    //"email":$scope.registration.email,
+                    //"timezone":timeZoneNumber
+                };
+
+            alert(loginDataSend.name);
+                $.ajax({
+                    method: "post",
+                    url: "/TempServlet",
+                    data: loginDataSend,
+                    dataType: "json",
+                    success: console.log("la post ha avuto successo")
+                });
+                $scope.IsMatch=false;
+                return true;
+
+
+
+
+            /*
+             console.log("Nome utente è:   " + $scope.registration.name);
+             console.log("La password 1 è: " + $scope.registration.pass1);
+             console.log("La password 2 è: " + $scope.registration.pass2);
+             console.log("L' e.mail  è:    " + $scope.registration.email);
+             */
+
+
+
+        }
+
+
+    }]);
+
+
