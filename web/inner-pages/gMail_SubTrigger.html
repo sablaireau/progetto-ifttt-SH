@@ -20,7 +20,7 @@
                 <form id="gmail-form" role="form" name="form" ng-controller="SubGmailController" novalidate>
 
                     <div class="form-group">
-                        <label style="color:rgba(255, 255, 255, 0.78)">Email address:</label>
+                        <label>Email address:</label>
                         <input type="email" class="form-control" id="email" placeholder="insert your email" ng-model="gmailinput.email" required="" name="uEmail" >
                         <div ng-show="form.$submitted || form.uEmail.$touched">
                             <span ng-show="form.uEmail.$error.email"   style="color: #b81900">This is not a valid email</span>
@@ -37,8 +37,8 @@
                     </div>
 
                     <div>
-                        <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
-                        <a  type="submit" class="btn btn-primary"  href="#SubGMailAction" >Next</a>
+                        <a  type="submit" class="btn btn-primary" href="#logged_in" >Back</a>
+                        <a  type="submit" class="btn btn-primary"  href="#SubGMailAction"  ng-click="triggerGmail(gmailinput)" >Next</a>
                     </div>
                     <!--
                     <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>

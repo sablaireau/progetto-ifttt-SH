@@ -425,23 +425,20 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
         $scope.triggerGmail = function(user)
         {
-            $scope.triggerGmailData = angular.copy(user);
+            //$scope.triggerGmailData = angular.copy(user);
 
-            alert(user.email + "  " + user.subjectReceive);
-            if(angular.isUndefined(user.email))
+            //alert(user.email + "  " + user.subjectReceive);
+
+
+            if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
             {
-                if (angular.isUndefined(user.subjectReceive)) {
-                    //Error
-                    alert("You have two insert e.mail or/and subject");
-                    return;
-                }
-                else {
-                    alert("2");
+                    //alert("Two defined");
+
                     $scope.triggerGmailData = angular.copy(user);
                     var loginDataSend =
                     {
                         "sender:": $scope.triggerGmailData.email,
-                        "subject": "null"
+                        "subject": $scope.triggerGmailData.subjectReceive
                     };
                     //alert(loginDataSend.pssword);
                     $.ajax({
@@ -451,10 +448,16 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                         dataType: "json",
                         success: console.log("la post ha avuto successo")
                     });
-                    return;
+                    //return;
+                //alert("Two defined");
 
-                }
+
             }
+
+
+
+            alert("s");
+            /*
             if(angular.isUndefined(user.subjectReceive))
             {
                 if (angular.isUndefined(user.email))
@@ -482,8 +485,8 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
                 }
 
-            }//For the function
-
+               */
+         //   }
 
 
 
