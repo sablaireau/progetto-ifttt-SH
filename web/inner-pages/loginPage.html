@@ -50,11 +50,10 @@
                                        ng-model="user.pwd" name="pwd"
                                        ng-minlength="2"
                                        ng-maxlength="20"
-                                    >
                                     <div ng-show="form.pwd.$invalid && !form.pwd.$pristine || form.$submitted || form.pwd.$touched">
                                         <span ng-show="form.pwd.$error.required" style="color: #b81900">The password is mandatory</span>
                                         <span ng-show="form.pwd.$error.minlength" style="color: #b81900">Password is too short.</span>
-                                        <span ng-show="form.pwd.$error.maxlength">Password is too long.</span>
+                                        <span ng-show="form.pwd.$error.maxlength" style="color: #b81900">Password is too long.</span>
                                     </div>
                                 </div>
 
