@@ -44,3 +44,5 @@ progetto-ifttt-SH.iml
 *.java
 
 WEB-INF/web.xml
+
+web/WEB-INF/web.xml
