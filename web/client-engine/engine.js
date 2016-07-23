@@ -419,6 +419,55 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
 
 
 
+iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
+    function ($scope, $rootscope, $routeParams, $http, $resource) {
+
+
+
+
+
+        $scope.triggerGmail = function(user)
+        {
+            $scope.triggerGmailData = angular.copy(user);
+
+
+
+            var loginDataSend= {
+                "sender:": $scope.triggerGmailData.email,
+                "subject": $scope.triggerGmailData.subjectReceive
+
+            };
+            //alert(loginDataSend.pssword);
+            $.ajax({
+                method: "post",
+                url: "/TempServlet",
+                data: loginDataSend,
+                dataType: "json",
+                success: console.log("la post ha avuto successo")
+            });
+
+
+
+
+            /*
+             console.log("Nome utente è:   " + $scope.registration.name);
+             console.log("La password 1 è: " + $scope.registration.pass1);
+             console.log("La password 2 è: " + $scope.registration.pass2);
+             console.log("L' e.mail  è:    " + $scope.registration.email);
+             */
+
+
+
+        }
+
+
+
+
+    }]);
+
+
+
+
 iftttApp.controller('loggedinController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
     function ($scope, $rootscope, $routeParams, $http, $resource) {
         $('#registration-form').addClass('animated fadeIn');

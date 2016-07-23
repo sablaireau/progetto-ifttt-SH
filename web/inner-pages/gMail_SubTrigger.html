@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<div>
 <br>
 <br>
 <br>
@@ -17,12 +17,13 @@
             </div>
             <div class="col-md-4">
                 <p><h1>Choose your trigger</h1></p>
-                <form id="gmail-form" role="form" name="form" ng-controller="recoveruserpasswordController" novalidate>
+                <form id="gmail-form" role="form" name="form" ng-controller="SubGmailController" novalidate>
                     <div class="form-group">
                         <label style="color:rgba(0, 0, 0, 0.78)">Insert email</label>
                         <input type="email" class="form-control" id="email" placeholder="insert your email"
-                               ng-model="gmailinput.email" required="" name="uEmail" >
+                               ng-model="gmailinput.email" required="" name="email" >
                         <br>
+                    </div>
 
                         <!--Subject e.mail -->
                         <div class="form-group">
@@ -31,17 +32,19 @@
                                       ng-model="gmailinput.subjectReceive"  name="subjectReceive"
                             ></textarea>
                         </div>
-
-                        <a  type="submit" class="btn btn-primary" href="#logged_in" >Home</a>
-                        <a  type="submit" class="btn btn-primary"  href="#SubGMailAction" >Next</a>
-
+                    <div>
+                        <button  type="submit" class="btn btn-primary" href="#logged_in" >Home</button>
+                        <button  type="submit" class="btn btn-primary"  href="#SubGMailAction" ng-click="triggerGmail(gmailinput)">Next</button>
                     </div>
-            </div>
-            <div class="col-md-4">
+
+                    </form>
+                </div>
+                <div class="col-md-4">
+                </div>
             </div>
         </div>
     </div>
-</div>
+
 
 
 
