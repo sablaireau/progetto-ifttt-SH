@@ -18,21 +18,16 @@
             <div class="col-md-4">
                 <p><h1>Choose your trigger</h1></p>
                 <form id="gmail-form" role="form" name="form" ng-controller="SubGmailController" novalidate>
-
-                    <!--Subject e.mail -->
                     <div class="form-group">
-                        <label style="color:rgba(255, 255, 255, 0.78)">Email address:</label>
-                        <input type="email" class="form-control" id="email" placeholder="insert your email" ng-model="gmailinput.email" required="" name="uEmail" >
-                        <div ng-show="form.$submitted || form.uEmail.$touched">
-                            <span ng-show="form.uEmail.$error.required" style="color: #b81900">The email is mandatory</span>
-                            <span ng-show="form.uEmail.$error.email"   style="color: #b81900">This is not a valid email</span>
-                        </div>
+                        <label style="color:rgba(0, 0, 0, 0.78)">Insert email</label>
+                        <input type="email" class="form-control" id="email" placeholder="insert your email"
+                               ng-model="gmailinput.email" required="" name="email" >
+                        <br>
                     </div>
-
 
                         <!--Subject e.mail -->
                         <div class="form-group">
-                            <label>or / and the object</label>
+                            <label for="comment">or / and the object</label>
                             <textarea class="form-control" rows="5" id="subjectReceive"  placeholder="insert the subject"
                                       ng-model="gmailinput.subjectReceive"  name="subjectReceive"
                             ></textarea>

@@ -422,68 +422,43 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
 iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
     function ($scope, $rootscope, $routeParams, $http, $resource) {
 
+
+
+
+
         $scope.triggerGmail = function(user)
         {
+            $scope.triggerGmailData = angular.copy(user);
 
 
-            alert(user.email + "  " + user.subjectReceive);
-            if(angular.isUndefined(user.email))
-            {
-                if (angular.isUndefined(user.subjectReceive)) {
-                    //Error
-                    alert("You have two insert e.mail or/and subject");
-                    return;
-                }
-                else {
-                    alert("2");
-                    $scope.triggerGmailData = angular.copy(user);
-                    var loginDataSend =
-                    {
-                        "sender:": $scope.triggerGmailData.email,
-                        "subject": "null"
-                    };
-                    //alert(loginDataSend.pssword);
-                    $.ajax({
-                        method: "post",
-                        url: "/TempServlet",
-                        data: loginDataSend,
-                        dataType: "json",
-                        success: console.log("la post ha avuto successo")
-                    });
-                    return;
 
-                }
-            }
-            if(angular.isUndefined(user.subjectReceive))
-            {
-                if (angular.isUndefined(user.email))
-                {
-                    //Error
-                    return;
-                }
-                else
-                {
-                    $scope.triggerGmailData = angular.copy(user);
-                    var loginDataSend =
-                    {
-                        "sender:": "null",
-                        "subject": $scope.triggerGmailData.subjectReceive
-                    };
+            var loginDataSend= {
+                "sender:": $scope.triggerGmailData.email,
+                "subject": $scope.triggerGmailData.subjectReceive
 
-                    $.ajax({
-                        method: "post",
-                        url: "/TempServlet",
-                        data: loginDataSend,
-                        dataType: "json",
-                        success: console.log("la post ha avuto successo")
-                    });
-                    return
+            };
+            //alert(loginDataSend.pssword);
+            $.ajax({
+                method: "post",
+                url: "/TempServlet",
+                data: loginDataSend,
+                dataType: "json",
+                success: console.log("la post ha avuto successo")
+            });
 
-                }
 
-            }//For the function
+
+
+            /*
+             console.log("Nome utente è:   " + $scope.registration.name);
+             console.log("La password 1 è: " + $scope.registration.pass1);
+             console.log("La password 2 è: " + $scope.registration.pass2);
+             console.log("L' e.mail  è:    " + $scope.registration.email);
+             */
+
+
+
         }
-
 
 
 
