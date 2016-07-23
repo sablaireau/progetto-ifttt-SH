@@ -1,4 +1,3 @@
-
 .idea/artifacts/progetto_ifttt_war_exploded.xml
 
 .idea/compiler.xml
@@ -38,3 +37,6 @@ out/artifacts/Root_GhiHub_war_exploded/WEB-INF/web.xml
 Root GhiHub.iml
 
 out/**
+.idea/artifacts/progetto_ifttt_SH_war_exploded.xml
+
+progetto-ifttt-SH.iml
