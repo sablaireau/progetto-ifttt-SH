@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <form id="gmail-form" role="form" name="form" ng-controller="recoveruserpasswordController" novalidate>
+                    <div class="form-group">
+                        <label style="color:rgba(0, 0, 0, 0.78)">Insert email or the object:</label>
+                        <input type="email" class="form-control" id="email" placeholder="insert your email"
+                               ng-model="gmailinput.email" required="" name="uEmail" >
+                        <br>
+
+                        <!--Subject e.mail -->
+                        <div class="form-group">
+                            <label for="comment">Subject e.mail:</label>
+                            <textarea class="form-control" rows="5" id="subjectReceive"  placeholder="insert the subject"
+                                      ng-model="gmailinput.subjectReceive"  name="subjectReceive"
+                            ></textarea>
+                        </div>
+
+                        <a  type="submit" class="btn btn-primary" href="#home" >Home</a>
+                        <a  type="submit" class="btn btn-primary"  href="#gMail" >Next</a>
+
+                    </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
