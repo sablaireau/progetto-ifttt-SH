@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://www.davidemorelli.joomlafree.it/MorelliDavide/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Sito sul cibo</title>
+<link href="./Sito sul cibo_files/style.css" rel="stylesheet" type="text/css">
+<link href="./Sito sul cibo_files/css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!--ADATTA IL SITO ALLO SCHERMO DEL DISPOSITIVO DA CUI STAI VEDENDO IL SITO----->
+
+
+<script type="text/javascript" src="./Sito sul cibo_files/jquery-1.10.2.min.js"></script>
+
+<script>
+<!----- JQUERY FOR SLIDING NAVIGATION --->   
+$(document).ready(function() {
+  $('a[href*=#]').each(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname
+    && this.hash.replace(/#/,'') ) {
+      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+       if ($target) {
+         var targetOffset = $target.offset().top;
+
+<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
+         $(this).click(function() {
+            $("#nav li a").removeClass("active");
+            $(this).addClass('active');
+           $('html, body').animate({scrollTop: targetOffset}, 850);
+           return false;
+         });
+      }
+    }
+  });
+
+});
+</script>
+
+</head>
+
+<body>
+<div id="all">
+	<div id="slide1">
+    <div class="logo">
+    <a href="http://www.davidemorelli.joomlafree.it/MorelliDavide/#content2"><img src="./Sito sul cibo_files/LOGO.gif"></a>
+	  <p>Benvenuto nel sito del cibo.</p>
+        <p>Clicca sul logo per visitarlo!</p>
+        </div><!--LOGO-------------------------------->
+</div> <!--SLIDE 1------------------------------------>
+
+<div id="slide2">
+<div id="content2">
+  <ul>
+    <li><a href="http://www.davidemorelli.joomlafree.it/MorelliDavide/Curiosit%C3%A0/index.html"><div class="icone">
+    <br><br>Curiosità</div></a></li>
+    
+    <li><a href="http://www.davidemorelli.joomlafree.it/MorelliDavide/Notizie/index.html"><div class="icone">
+    <br><br>Notizie</div></a></li>
+    
+    <li><a href="http://www.davidemorelli.joomlafree.it/MorelliDavide/Contatti/index.html"><div class="icone">
+    <br><br>Contatti</div></a></li>
+  
+  </ul>
+</div><!--CONTENT------------------------------------>
+</div> <!--SLIDE 2------------------------------------>
+</div><!--ALL------------------------------------>
+
+
+<div id="footer"><p>Sito creato da Davide Morelli</p></div>
+<script type="text/javascript" src="./Sito sul cibo_files/google_service.js"></script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-5677527114872550");
+  GS_googleEnableAllServices();
+</script><script src="./Sito sul cibo_files/google_ads.js"></script>
+<script type="text/javascript">
+  GA_googleAddSlot("ca-pub-5677527114872550", "Footer_freesite");
+</script>
+<script type="text/javascript">
+	GA_googleFetchAds();
+</script>
+<script type="text/javascript">
+	GA_googleFillSlot("Footer_freesite");
+</script><script src="https://securepubads.g.doubleclick.net/gampad/ads?correlator=865345985974508&amp;output=json_html&amp;callback=GA_googleSetAdContentsBySlotForSync&amp;impl=s&amp;ic=0&amp;eid=108809087&amp;client=ca-pub-5677527114872550&amp;slotname=Footer_freesite&amp;page_slots=Footer_freesite&amp;cookie=ID%3D529efc3fdf7265f8%3AT%3D1461180255%3AS%3DALNI_Maz0YIhxhFYCIc8lOOVi5CI6y1g1g&amp;url=http%3A%2F%2Fwww.davidemorelli.joomlafree.it%2FMorelliDavide%2F&amp;lmt=1468230383&amp;dt=1468230383271&amp;cc=100&amp;biw=1425&amp;bih=754&amp;adk=1687558603&amp;adx=0&amp;ady=1700&amp;ifi=1&amp;oid=3&amp;u_tz=120&amp;u_his=2&amp;u_h=900&amp;u_w=1440&amp;u_ah=849&amp;u_aw=1440&amp;u_cd=24&amp;u_nplug=5&amp;u_nmime=7&amp;flash=22.0.0&amp;gads=v2&amp;ga_vid=1969802972.1468230383&amp;ga_sid=1468230383&amp;ga_hid=1491220417"></script>
+
+
+<script type="text/javascript">
+// <![CDATA[ 
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+    if (oldonload) {
+      oldonload();
+    }
+    func();
+    }
+  }
+}
+addLoadEvent( function () {
+ 
+  var adsContainer = document.createElement('div');
+  adsContainer.id = "frameBanner";
+ 
+  var adsFrame = document.getElementById('google_ads_iframe_Footer_freesite'); 
+  adsFrame.style.display = 'block';
+  adsFrame.style.border = '0px';
+  adsFrame.style.width = '508px';
+  adsFrame.style.height = '65px';
+  adsFrame.style.margin = '0px';
+  adsFrame.style.padding = '0px';
+  
+  var adsContainer = document.getElementById('google_ads_div_Footer_freesite_ad_wrapper');
+	  adsContainer.style.background = 'green';
+	  adsContainer.style.width = '470px';
+	  adsContainer.style.height = '60px';
+	  adsContainer.style.position = 'fixed';
+	  adsContainer.style.margin = '0px';
+	  adsContainer.style.padding = '0px';
+	  adsContainer.style.bottom = '15px';
+	  adsContainer.style.right = '15px';
+	  adsContainer.style.overflow='hidden';
+  
+  var closeAds = document.createElement('div');
+	  closeAds.style.background = 'transparent url(/jmhbanner/close.png) no-repeat center center';
+	  closeAds.style.width = '14px';
+	  closeAds.style.height = '14px';
+	  closeAds.style.position = 'fixed';
+	  closeAds.style.margin = '0px';
+	  closeAds.style.padding = '0px';
+	  closeAds.style.bottom = '80px';
+	  closeAds.style.right = '14px';
+
+  adsContainer.appendChild(closeAds);
+  closeAds.onclick = function () {
+    var obj = this.parentNode;
+    obj.parentNode.removeChild(obj);
+  }
+});
+// ]]>
+</script>
+
+</body></html>
