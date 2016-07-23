@@ -67,6 +67,11 @@ iftttApp.config(['$routeProvider', function($routeProvider){
         controller:  'SubGmailActionController'
     });
 
+    $routeProvider.when('/emailSuccess', {
+        templateUrl: 'inner-pages/emailSuccess.html',
+        controller:  'emailSuccessActionController'
+    });
+
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
