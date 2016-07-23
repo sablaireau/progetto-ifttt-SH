@@ -407,3 +407,16 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
     }]);
 
 
+
+
+iftttApp.controller('loggedinController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
+    function ($scope, $rootscope, $routeParams, $http, $resource) {
+        $('#registration-form').addClass('animated fadeIn');
+
+
+
+
+    }]);
+
+
+
