@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="iftttApp">
+<link rel="stylesheet" type="text/css" href="./../css/registration/registration.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="./bower_components/moment/moment.js"></script>
+<script>src="./bower_componets/moment-timezone/moment-timezone-with-data.js" </script>
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<body>
+
+<br>
+<br>
+<br>
+
+<div id="registratiom-page" class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-6">
+            <div id="registration-jumbotron" class="jumbotron">
+                <form id="registration-form" role="form" name="form" ng-controller="registrationController" novalidate>
+
+                    <div class="container">
+
+                        <!--Username -->
+                        <div class="form-group">
+                            <label style="color:rgba(255, 255, 255, 0.78)">
+                                Username:
+                            </label>
+                            <input type="username" class="form-control" id="username" name="user"
+                                   placeholder="username"  ng-model="user.name" required>
+                            <div ng-show="form.user.$invalid && !form.user.$pristine || form.$submitted || form.user.$touched">
+                    <span ng-show="form.user.$error.required" style="color: #b81900">
+                            The user is mandatory
+                    </span>
+                            </div>
+                            <br>
+                            <!--Password-->
+                            <div class="form-group">
+                                <label style="color:rgba(255, 255, 255, 0.78)">Password:</label>
+                                <input type="password" class="form-control" id="pwd1" placeholder="insert your password" required=""
+                                       ng-model="user.pass1" name="pwd1"
+                                       ng-minlength="2"
+                                       ng-maxlength="20"
+                                >
+                                <div ng-show="form.pwd1.$invalid && !form.pwd1.$pristine || form.$submitted || form.pwd1.$touched">
+                                    <span ng-show="form.pwd1.$error.required" style="color: #b81900">The password is mandatory</span>
+                                    <span ng-show="form.pwd1.$error.minlength" style="color: #b81900">Password is too short.</span>
+                                    <span ng-show="form.pwd1.$error.maxlength">Password is too long.</span>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="pwd2" placeholder="retype the password" required=""
+                                       ng-model="user.pass2" name="pwd2"
+                                       ng-minlength="2"
+                                       ng-maxlength="20"
+                                >
+                                <div ng-show="form.pwd2.$invalid && !form.pwd2.$pristine || form.$submitted || form.pwd2.$touched">
+                                    <span ng-show="form.pwd2.$error.required" style="color: #b81900"></span>
+                                    <span
+                                            ng-show="form.pwd2.$error.required" style="color: #b81900">The password is mandatory
+                        </span>
+                                    <span ng-show="form.pwd2.$error.minlength" style="color: #b81900">Password is too short.</span>
+                                    <span ng-show="form.pwd2.$error.maxlength" style="color: #b81900">Password is too long.</span>
+                                </div>
+                                <span ng-show="form.pwd1.$error.match">Emails have to match!</span>
+
+                            </div>
+                            <span ng-show="IsMatch" style="color:#b81900">Error the two password does't egual</span>
+
+
+                            <!--Lunghezza minima della password: 10 caratteri
+                            Lunghezza massima della password: 20 caratteri
+                            Standard del polito : https://idp.polito.it/Chpass/chpassservlet/main.htm
+                            Per i test la password minima è stata messa a 2 caratteri.
+                            -->
+
+
+
+                            <!--E.mail-->
+                            <div class="form-group">
+                                <label style="color:rgba(255, 255, 255, 0.78)">Email address:</label>
+                                <input type="email" class="form-control" id="email" placeholder="insert your email" ng-model="user.email" required="" name="uEmail" >
+                                <div ng-show="form.$submitted || form.uEmail.$touched">
+                                    <span ng-show="form.uEmail.$error.required" style="color: #b81900">The email is mandatory</span>
+                                    <span ng-show="form.uEmail.$error.email"   style="color: #b81900">This is not a valid email</span>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button  type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="registrationCheck(user)">Submit</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div align="center">
+                                            <a href="#recoveruserpassword" style="color:rgba(255, 255, 255, 0.78)">Password dimenticata?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+</div>
+
+
+
+<!-------------->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+#weather-page{
+    margin-top:20%;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+
+img {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+img:hover {
+    filter: none; /* IE6-9 */
+    -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+
+}
+#change div:hover{
+    opacity:5;
+    cursor:pointer;
+}
+
