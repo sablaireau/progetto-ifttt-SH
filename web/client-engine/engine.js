@@ -52,6 +52,10 @@ iftttApp.config(['$routeProvider', function($routeProvider){
         controller:  'loginController'
     });
 
+    $routeProvider.when('/logged_in', {
+        templateUrl: 'inner-pages/home_logged.html',
+        controller:  'loggedinController'
+    });
 
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
