@@ -72,6 +72,17 @@ iftttApp.config(['$routeProvider', function($routeProvider){
         controller:  'emailSuccessActionController'
     });
 
+    $routeProvider.when('/cacca', {
+        templateUrl: 'demtCode/yWeather.html',
+        controller:  'cs'
+    });
+
+    $routeProvider.when('/customWeather', {
+        templateUrl: 'inner-pages/customWeather.html',
+        controller:  'customWeatherActionController'
+    });
+
+
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
