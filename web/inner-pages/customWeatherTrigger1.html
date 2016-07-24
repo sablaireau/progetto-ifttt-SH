@@ -1,44 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../css/customWeather/customWeather.css">
-    <script src="../css/customWeather/customWeather.js"></script>
-
-
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href="css/custonWeatherTrigger1/customWeather.css" rel="stylesheet" type="text/css">
+    <script src="css/custonWeatherTrigger1/customWeather.js"></script>
 </head>
 <body>
 
-<div class='wrapper'>
+<h2 class=""><b>Local Weather App</b></h2>
 
-    <search>
-        <form>
-            <input class='searchbar transparent' id='search' type='text' placeholder='enter city, country' />
-            <input class='button transparent' id='button' type="submit" value='GO' />
-        </form>
-    </search>
+<div id="search-bar">
 
-    <div class='panel'>
-        <h2 class='city' id='city'></h2>
-        <div class='weather' id='weather'>
-            <div class='group secondary'>
-                <h3 id='dt'></h3>
-                <h3 id='description'></h3>
-            </div>
-            <div class='group secondary'>
-                <h3 id='wind'></h3>
-                <h3 id='humidity'></h3>
-            </div>
-            <div class='temperature' id='temperature'>
-                <h1 class='temp' id='temp'><i id='condition'></i> <span id='num'></span><a class='fahrenheit active' id='fahrenheit' href="#">&deg;F</a><span class='divider secondary'>|</span><a class='celsius' id='celsius' href="#">&deg;C</a></h1>
-            </div>
-            <div class='forecast' id='forecast'></div>
+    <div class="input-group">
+        <span class="input-group-addon "><div class="hidden-xs">Search for your city :</div> </span>
+
+        <input id="search-input" type="search" class="form-control" placeholder="Enter location...">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search!</button>
+
+      </span>
+    </div>
+    <b>
+</div>
+<div id="mode">
+    Showing in :
+    <span role="button" id="deg"> &deg;C</span>
+</div>
+</b>
+
+<div id="temper">
+    <div id="temp-board">
+        <div id="temp-inner">
+            <img id="icon" src="http://openweathermap.org/img/w/01d.png" alt="weather-icon">
+            <b><div id="locality">Area-Country</div>
+            </b>
+            <div id="temp">Temp &deg;C</div>
+            <div id="weather-desc">Cant find your Location :(</div>
         </div>
     </div>
 
+    <!--Main TEmp End-->
+    <!--details-->
+    <center>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3  col-sm-6  col-xs-12">
+
+                    <div class="info-board">
+                        <!--box1 Content-->
+                        <div class="info-section">
+                            <div class="titles">Wind</div>
+                            <div class="values">Speed : <span id="wind-speed">0</span> m/sec</div>
+                            <div class="values">Direction : <span id="wind-deg">0</span>&deg;</div>
+                        </div>
+                        <div class="info-section">
+                            <div class="titles">Clouds</div>
+                            <div class="values">Cloudiness : <span id="clouds-all">0</span>%</div>
+                        </div>
+                        <div class="info-section">
+                            <div class="titles">Rain & Snow (3h)</div>
+                            <div class="values">Rain : <span id="rain-3h">0</span> mm</div>
+                            <div class="values">Snow : <span id="snow-3h">0</span> mm</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--box-2-->
+
+                <div class="col-lg-3  col-sm-6 col-xs-12">
+
+                    <div class="info-board">
+                        <!--box2 Content-->
+                        <div class="info-section">
+                            <div class="titles">Weather</div>
+                            <div class="values">Temperature : <span id="main-temp">0</span> &deg;C</div>
+                            <div class="values">Pressure : <span id="main-pressure">0</span> hPa</div>
+                            <div class="values">Humidity : <span id="main-humidity">0</span>%</div>
+                            <div class="values">Min.Temp : <span id="main-temp_min">0</span>&deg;C</div>
+                            <div class="values">Max.Temp : <span id="main-temp_max">0</span>&deg;C</div>
+                        </div>
+                        <div class="info-section">
+                            <div class="titles">Pressure at</div>
+                            <div class="values">Sea_level : <span id="main-sea_level">N.A</span> hPa</div>
+                            <div class="values">Ground_level : <span id="main-grnd_level">N.A</span> hPa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--box3-->
+                <div class="col-lg-3  col-sm-6 col-xs-12">
+
+                    <div class="info-board">
+                        <!--box3 Content-->
+                        <div class="titles" id="forecast">Forecast</div>
+
+
+                    </div>
+                </div>
+                <!--box-3-->
+                <!--box-4-->
+                <div class="col-lg-3   col-sm-6 col-xs-12">
+
+                    <div class="info-board">
+                        <!--box4 Content-->
+                        <div class="info-section">
+                            <div class="titles">About</div>
+                            <div class="values">Date : <span id="main-date">N.A</span></div>
+                            <div class="values">City : <span id="main-name">N.A</span></div>
+                            <div class="values">City Id : <span id="sys-id">N.A</span></div>
+                            <div class="values">Longitude : <span id="coord-lon">N.A</span></div>
+                            <div class="values">Latitude : <span id="coord-lat">N.A</span> </div>
+                            <div class="values">Country : <span id="sys-country">N.A</span>   </div>
+                            <div class="values">SunRise : <span id="sys-sunrise">N.A</span> UTC</div>
+                            <div class="values">SunSet : <span id="sys-sunset">N.A</span> UTC</div>
+                        </div>
+                    </div>
+                </div>
+                <!--box4-->
+            </div>
+        </div>
+    </center>
 </div>
-
-
 </body>
 </html>
