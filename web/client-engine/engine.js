@@ -83,6 +83,12 @@ iftttApp.config(['$routeProvider', function($routeProvider){
     });
 
 
+    $routeProvider.when('/customWeatherTrigger1', {
+        templateUrl: 'inner-pages/customWeatherTrigger1.html',
+        controller:  'customWeatherActionControllerTrigger1'
+    });
+
+
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 

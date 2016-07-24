@@ -51,6 +51,10 @@ $(function() {
         });
 
     function getWeather(input) {
+        /*
+        Get the metheo
+         */
+
 
         var appid = '58b6f7c78582bffab3936dac99c31b25';
         var requestWeather = $.ajax({
