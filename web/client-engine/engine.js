@@ -474,21 +474,21 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                         success: console.log("la post ha avuto successo")
                     });
                     //return;
-                    alert("  email");
+                    alert(" subjectReceive ");
 
 
                 }
                 else
                 {
-                    if (angular.isDefined( user.subjectReceive))
+                    if (angular.isDefined( user.email))
                     {
                         //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
 
                         $scope.triggerGmailData = angular.copy(user);
                         var loginDataSend =
                         {
-                            "sender:": "null",
-                            "subject": $scope.triggerGmailData.email
+                            "sender:": $scope.triggerGmailData.email,
+                            "subject": "null"
                         };
                         //alert(loginDataSend.pssword);
                         $.ajax({
@@ -499,7 +499,7 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                             success: console.log("la post ha avuto successo")
                         });
                         //return;
-                        alert("subject defined");
+                        alert("email defined");
 
 
                     }
