@@ -426,9 +426,9 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
         $scope.triggerGmail = function(user)
         {
-            var view = "#SubGMailAction";
+            var view = "SubGMailAction";
 
-            alert(user.email + "  " + user.subjectReceive);
+            //alert(user.email + "  " + user.subjectReceive);
 
             if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
             {
