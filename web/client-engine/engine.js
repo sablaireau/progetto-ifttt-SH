@@ -86,18 +86,18 @@ iftttApp.controller('homeController', ['$scope', '$rootScope', '$routeParams', '
             $scope.loginUser = angular.copy(user);
 
 
-                var userLogin= {
-                    "username": $scope.loginUser.user,
-                    "password": $scope.loginUser.password,
-                };
+            var userLogin= {
+                "username": $scope.loginUser.user,
+                "password": $scope.loginUser.password,
+            };
 
-                $.ajax({
-                    method: "post",
-                    url: "/TempServlet",
-                    data: userLogin,
-                    dataType: "json",
-                    success: console.log("la post ha avuto successo")
-                });
+            $.ajax({
+                method: "post",
+                url: "/TempServlet",
+                data: userLogin,
+                dataType: "json",
+                success: console.log("la post ha avuto successo")
+            });
 
 
 
@@ -126,49 +126,49 @@ iftttApp.controller('registrationController', ['$scope', '$rootScope', '$routePa
 
 
 
-         $scope.registrationCheck = function(user)
-         {
-         $scope.registration = angular.copy(user);
+        $scope.registrationCheck = function(user)
+        {
+            $scope.registration = angular.copy(user);
 
-             if($scope.registration.pass1==$scope.registration.pass2)
-             {
+            if($scope.registration.pass1==$scope.registration.pass2)
+            {
 
 
                 //GMT+0200
-                 $scope.str = moment().toString();
-                 var strs = "How are you doing today?";
-                 $scope.res =  $scope.str.split(" ");
-                 //alert($scope.res[5]);
-                 var timeZoneNumber = $scope.res[5].substring(3, 8);
-                 var userRegistration= {
-                     "username": $scope.registration.name ,
-                     "password":$scope.registration.pass1,
-                     //"pass2":$scope.registration.pass2,
-                     "email":$scope.registration.email,
-                     "timezone":timeZoneNumber
-                 };
+                $scope.str = moment().toString();
+                var strs = "How are you doing today?";
+                $scope.res =  $scope.str.split(" ");
+                //alert($scope.res[5]);
+                var timeZoneNumber = $scope.res[5].substring(3, 8);
+                var userRegistration= {
+                    "username": $scope.registration.name ,
+                    "password":$scope.registration.pass1,
+                    //"pass2":$scope.registration.pass2,
+                    "email":$scope.registration.email,
+                    "timezone":timeZoneNumber
+                };
 
 
-                 $.ajax({
-                     method: "post",
-                     url: "/TempServlet",
-                     data: userRegistration,
-                     dataType: "json",
-                     success: console.log("la post ha avuto successo")
-                 });
-                 $scope.IsMatch=false;
-                 return true;
-             }
-             else
-             {
-                 //alert("Error");
-                 //document.write("cia");
-                 $scope.IsMatch=true;
-                 return false;
-             }
+                $.ajax({
+                    method: "post",
+                    url: "/TempServlet",
+                    data: userRegistration,
+                    dataType: "json",
+                    success: console.log("la post ha avuto successo")
+                });
+                $scope.IsMatch=false;
+                return true;
+            }
+            else
+            {
+                //alert("Error");
+                //document.write("cia");
+                $scope.IsMatch=true;
+                return false;
+            }
 
 
-             /*
+            /*
              console.log("Nome utente è:   " + $scope.registration.name);
              console.log("La password 1 è: " + $scope.registration.pass1);
              console.log("La password 2 è: " + $scope.registration.pass2);
@@ -177,7 +177,7 @@ iftttApp.controller('registrationController', ['$scope', '$rootScope', '$routePa
 
 
 
-         }
+        }
 
 
     }]);
@@ -258,9 +258,9 @@ iftttApp.controller('yWeatherController', ['$scope', '$rootScope', '$routeParams
 
 
         /*
-        *  Questa la usiamo per mandare i dati del form del Weather al server, nel campo 'success' ci metteremo la
-        *  funzione che reagisce alla rispsota del server
-        */
+         *  Questa la usiamo per mandare i dati del form del Weather al server, nel campo 'success' ci metteremo la
+         *  funzione che reagisce alla rispsota del server
+         */
         $('#sendDataWeather').click(function()
         {
             alert(dataToServer.weather.test.toString());
@@ -322,7 +322,7 @@ iftttApp.controller('recoverpasswordController', ['$scope', '$rootScope', '$rout
             {
 
                 //Controlli dentro HTLM o dentro engine?
-              //  alert("Sending");
+                //  alert("Sending");
                 var userRegistration= {
                     "password":$scope.recoverPassVar.pass1
 
@@ -359,7 +359,7 @@ iftttApp.controller('gmailController', ['$scope', '$rootScope', '$routeParams', 
 
 
         $scope.gmailSubmit = function(user) {
-           
+
         }
 
     }]);
@@ -380,24 +380,24 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
             $scope.loginData = angular.copy(user);
 
 
-                    var loginDataSend= {
-                    "username": $scope.loginData.name,
-                    "pssword": $scope.loginData.pwd
-                    //"pass2":$scope.registration.pass2,
-                    //"email":$scope.registration.email,
-                    //"timezone":timeZoneNumber
-                };
+            var loginDataSend= {
+                "username": $scope.loginData.name,
+                "pssword": $scope.loginData.pwd
+                //"pass2":$scope.registration.pass2,
+                //"email":$scope.registration.email,
+                //"timezone":timeZoneNumber
+            };
 
-           //alert(loginDataSend.pssword);
-                $.ajax({
-                    method: "post",
-                    url: "/TempServlet",
-                    data: loginDataSend,
-                    dataType: "json",
-                    success: console.log("la post ha avuto successo")
-                });
-                $scope.IsMatch=false;
-                return true;
+            //alert(loginDataSend.pssword);
+            $.ajax({
+                method: "post",
+                url: "/TempServlet",
+                data: loginDataSend,
+                dataType: "json",
+                success: console.log("la post ha avuto successo")
+            });
+            $scope.IsMatch=false;
+            return true;
 
 
 
@@ -427,35 +427,32 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
         $scope.triggerGmail = function(user)
         {
 
-            if(( typeof user === 'undefined' ))
-            {
-                alert("si");
-            }
+            alert(user.email + "  " + user.subjectReceive);
 
             if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
             {
-                    //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
+                //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
 
-                    $scope.triggerGmailData = angular.copy(user);
-                    var loginDataSend =
-                    {
-                        "sender:": $scope.triggerGmailData.email,
-                        "subject": $scope.triggerGmailData.subjectReceive
-                    };
-                    //alert(loginDataSend.pssword);
-                    $.ajax({
-                        method: "post",
-                        url: "/TempServlet",
-                        data: loginDataSend,
-                        dataType: "json",
-                        success: console.log("la post ha avuto successo")
-                    });
-                    //return;
+                $scope.triggerGmailData = angular.copy(user);
+                var loginDataSend =
+                {
+                    "sender:": $scope.triggerGmailData.email,
+                    "subject": $scope.triggerGmailData.subjectReceive
+                };
+                //alert(loginDataSend.pssword);
+                $.ajax({
+                    method: "post",
+                    url: "/TempServlet",
+                    data: loginDataSend,
+                    dataType: "json",
+                    success: console.log("la post ha avuto successo")
+                });
+                //return;
                 alert("Two defined");
 
 
             }
-            /*
+
             else
             {
                 if (angular.isDefined( user.subjectReceive))
@@ -465,8 +462,8 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                     $scope.triggerGmailData = angular.copy(user);
                     var loginDataSend =
                     {
-                        "sender:": $scope.triggerGmailData.email,
-                        "sender:": "null"
+                        "sender:": "null",
+                        "subject:": $scope.triggerGmailData.subjectReceive
                     };
                     //alert(loginDataSend.pssword);
                     $.ajax({
@@ -482,73 +479,73 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
                 }
                 else
+                {
+                    if (angular.isDefined( user.subjectReceive))
                     {
-                        if (angular.isDefined( user.subjectReceive))
+                        //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
+
+                        $scope.triggerGmailData = angular.copy(user);
+                        var loginDataSend =
                         {
-                            //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
-
-                            $scope.triggerGmailData = angular.copy(user);
-                            var loginDataSend =
-                            {
-                                "sender:": "null",
-                                "subject": $scope.triggerGmailData.subjectReceive
-                            };
-                            //alert(loginDataSend.pssword);
-                            $.ajax({
-                                method: "post",
-                                url: "/TempServlet",
-                                data: loginDataSend,
-                                dataType: "json",
-                                success: console.log("la post ha avuto successo")
-                            });
-                            //return;
-                            alert("subject defined");
+                            "sender:": "null",
+                            "subject": $scope.triggerGmailData.email
+                        };
+                        //alert(loginDataSend.pssword);
+                        $.ajax({
+                            method: "post",
+                            url: "/TempServlet",
+                            data: loginDataSend,
+                            dataType: "json",
+                            success: console.log("la post ha avuto successo")
+                        });
+                        //return;
+                        alert("subject defined");
 
 
-                        }
-                        else
-                        {
-                            alert("You have not completed the form");
-                        }
                     }
+                    else
+                    {
+                        alert("You have not completed the form");
+                    }
+                }
 
-            }*/alert("You have not completed the form");
+            }alert("You have not completed the form");
             //Test
 
             /*
-            if(angular.isUndefined(user.subjectReceive))
-            {
-                if (angular.isUndefined(user.email))
-                {
-                    //Error
-                    return;
-                }
-                else
-                {
-                    $scope.triggerGmailData = angular.copy(user);
-                    var loginDataSend =
-                    {
-                        "sender:": "null",
-                        "subject": $scope.triggerGmailData.subjectReceive
-                    };
+             if(angular.isUndefined(user.subjectReceive))
+             {
+             if (angular.isUndefined(user.email))
+             {
+             //Error
+             return;
+             }
+             else
+             {
+             $scope.triggerGmailData = angular.copy(user);
+             var loginDataSend =
+             {
+             "sender:": "null",
+             "subject": $scope.triggerGmailData.subjectReceive
+             };
 
-                    $.ajax({
-                        method: "post",
-                        url: "/TempServlet",
-                        data: loginDataSend,
-                        dataType: "json",
-                        success: console.log("la post ha avuto successo")
-                    });
-                    return
+             $.ajax({
+             method: "post",
+             url: "/TempServlet",
+             data: loginDataSend,
+             dataType: "json",
+             success: console.log("la post ha avuto successo")
+             });
+             return
 
-                }
-
-
-           }
-*/
+             }
 
 
-       }
+             }
+             */
+
+
+        }
 
 
 
