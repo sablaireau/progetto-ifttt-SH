@@ -139,7 +139,7 @@ $(function(){
         $("#sys-country").text(result.sys.country);
         /*Get Id for server */
         idCity=result.id;
-        alert("Id" + result.id);
+        //alert("Id" + result.id);
 
         var getTime=function(time){
             var date = new Date(time*1000);
@@ -251,8 +251,20 @@ $(function(){
 
 
     $("#but").on("click", function updateView(){
-        alert(idCity);
+        //alert(idCity);
+        var loginDataSend =
+        {
+            "sender:": idCity
 
+        };
+        //alert(loginDataSend.pssword);
+        $.ajax({
+            method: "post",
+            url: "/TempServlet",
+            data: loginDataSend,
+            dataType: "json",
+            success: console.log("la post ha avuto successo")
+        });
 
     })
 
