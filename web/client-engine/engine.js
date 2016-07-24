@@ -522,46 +522,8 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                 //alert("You have  completed the form");
                 $location.path(view);
             }
-            //Test
-
-            /*
-             if(angular.isUndefined(user.subjectReceive))
-             {
-             if (angular.isUndefined(user.email))
-             {
-             //Error
-             return;
-             }
-             else
-             {
-             $scope.triggerGmailData = angular.copy(user);
-             var loginDataSend =
-             {
-             "sender:": "null",
-             "subject": $scope.triggerGmailData.subjectReceive
-             };
-
-             $.ajax({
-             method: "post",
-             url: "/TempServlet",
-             data: loginDataSend,
-             dataType: "json",
-             success: console.log("la post ha avuto successo")
-             });
-             return
-
-             }
-
-
-             }
-             */
-
 
         }
-
-
-
-
 
     }]);
 
@@ -579,3 +541,115 @@ iftttApp.controller('loggedinController', ['$scope', '$rootScope', '$routeParams
     }]);
 
 
+
+iftttApp.controller('SubGmailActionController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource', '$location',
+    function ($scope, $rootscope, $routeParams, $http, $resource, $location) {
+
+
+
+        $scope.actionGmail = function(user)
+        {
+            if (angular.isUndefined( user))
+            {
+                alert("Almost a field must be completed");
+
+            }
+            else
+            {
+                var view = "emailSuccess";
+
+                //alert(user.email + "  " + user.subjectReceive);
+
+                if ((angular.isDefined( user.email) && angular.isDefined( user.subjectReceive)) )
+                {
+                    //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
+
+                    $scope.triggerGmailData = angular.copy(user);
+                    var loginDataSend =
+                    {
+                        "sender:": $scope.triggerGmailData.email,
+                        "subject": $scope.triggerGmailData.subjectReceive
+                    };
+                    //alert(loginDataSend.pssword);
+                    $.ajax({
+                        method: "post",
+                        url: "/TempServlet",
+                        data: loginDataSend,
+                        dataType: "json",
+                        success: console.log("la post ha avuto successo")
+                    });
+                    //return;
+                    //alert("Two defined");
+
+
+                }
+
+                else
+                {
+                    if (angular.isDefined( user.subjectReceive))
+                    {
+                        //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
+
+                        $scope.triggerGmailData = angular.copy(user);
+                        var loginDataSend =
+                        {
+                            "sender:": "null",
+                            "subject:": $scope.triggerGmailData.subjectReceive
+                        };
+                        //alert(loginDataSend.pssword);
+                        $.ajax({
+                            method: "post",
+                            url: "/TempServlet",
+                            data: loginDataSend,
+                            dataType: "json",
+                            success: console.log("la post ha avuto successo")
+                        });
+                        //return;
+                        //alert(" subjectReceive ");
+
+
+                    }
+                    else
+                    {
+                        if (angular.isDefined( user.email))
+                        {
+                            //Cosa fare se la stringa è vuota? Magari vuole l'email con il subject vuoto?
+
+                            $scope.triggerGmailData = angular.copy(user);
+                            var loginDataSend =
+                            {
+                                "sender:": $scope.triggerGmailData.email,
+                                "subject": "null"
+                            };
+                            //alert(loginDataSend.pssword);
+                            $.ajax({
+                                method: "post",
+                                url: "/TempServlet",
+                                data: loginDataSend,
+                                dataType: "json",
+                                success: console.log("la post ha avuto successo")
+                            });
+                            //return;
+                            //alert("email defined");
+
+
+                        }
+                        else
+                        {
+                            alert("You have not completed the form");
+                            $location.path(view);
+                        }
+                    }
+
+                }
+                //alert("You have  completed the form");
+                $location.path(view);
+            }
+
+        }
+
+
+
+
+
+    }]);
