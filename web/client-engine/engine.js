@@ -419,13 +419,14 @@ iftttApp.controller('loginController', ['$scope', '$rootScope', '$routeParams', 
 
 
 
-iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource',
-    function ($scope, $rootscope, $routeParams, $http, $resource) {
+iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams', '$http', '$resource', '$location',
+    function ($scope, $rootscope, $routeParams, $http, $resource, $location) {
 
 
 
         $scope.triggerGmail = function(user)
         {
+            var view = "#SubGMailAction";
 
             alert(user.email + "  " + user.subjectReceive);
 
@@ -506,10 +507,13 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
                     else
                     {
                         alert("You have not completed the form");
+                        $location.path(view);
                     }
                 }
 
-            }alert("You have not completed the form");
+            }alert("You have  completed the form");
+            $location.path(view);
+
             //Test
 
             /*
