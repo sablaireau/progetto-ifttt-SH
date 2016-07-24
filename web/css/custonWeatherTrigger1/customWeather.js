@@ -9,6 +9,7 @@ $(function(){
     var jsonurl;
     var forejsonurl;
     var deg;
+    var idCity;
     var getToDate=function(time){
         var date = new Date(time*1000);
         var day=date.getDate();
@@ -136,6 +137,9 @@ $(function(){
         $("#coord-lon").text(result.coord.lon);
         $("#coord-lat").text(result.coord.lat);
         $("#sys-country").text(result.sys.country);
+        /*Get Id for server */
+        idCity=result.id;
+        alert("Id" + result.id);
 
         var getTime=function(time){
             var date = new Date(time*1000);
@@ -244,4 +248,14 @@ $(function(){
             $("#temp").html(temperature+' &deg;C');
         }
     });
-});
+
+
+    $("#but").on("click", function updateView(){
+        alert(idCity);
+
+
+    })
+
+
+
+})

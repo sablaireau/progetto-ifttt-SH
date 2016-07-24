@@ -664,6 +664,18 @@ iftttApp.controller('SubGmailActionController', ['$scope', '$rootScope', '$route
             }
 
         }
+    }]);
+
+        iftttApp.controller('customWeatherActionControllerTrigger1', ['$scope', '$rootScope', '$routeParams', '$http', '$resource', '$location',
+            function ($scope, $rootscope, $routeParams, $http, $resource, $location)
+            {
+
+
+                $scope.weatherTrigger1 = function (user)
+                {
+                    alert(idCity);
+
+                }
 
 
 
