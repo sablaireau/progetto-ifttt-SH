@@ -426,7 +426,14 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
         $scope.triggerGmail = function(user)
         {
-            var view = "SubGMailAction";
+            if (angular.isUndefined( user))
+            {
+                alert("Campi vuoti");
+
+            }
+            else
+            {
+                var view = "SubGMailAction";
 
             //alert(user.email + "  " + user.subjectReceive);
 
@@ -513,7 +520,7 @@ iftttApp.controller('SubGmailController', ['$scope', '$rootScope', '$routeParams
 
             }alert("You have  completed the form");
             $location.path(view);
-
+            }
             //Test
 
             /*
