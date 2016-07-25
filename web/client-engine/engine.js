@@ -3,6 +3,7 @@
  */
 var iftttApp = angular.module('iftttApp', [ 'ngRoute', 'ngResource' ]);
 
+
 iftttApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/home', {
         templateUrl: 'inner-pages/home.html',

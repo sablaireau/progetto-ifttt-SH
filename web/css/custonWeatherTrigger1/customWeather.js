@@ -75,8 +75,7 @@ $(function(){
             "50d":"https://snap-photos.s3.amazonaws.com/img-thumbs/960w/9XDH29XSFK.jpg",
             "50n":"https://snap-photos.s3.amazonaws.com/img-thumbs/960w/F97C70F16D.jpg"
 
-        }
-        $("body").css( {"background": "url("+back[k]+") no-repeat center center fixed", "-webkit-background-size": "cover"});
+        };
 
 
 
